@@ -21,7 +21,7 @@ public class UniversityGrades {
     }
     //2.
     public double getAverageGrade(int[] grades) {
-        int sum = 0;
+        double sum = 0;
         for (int grade : grades) {
             sum += grade;
         }
