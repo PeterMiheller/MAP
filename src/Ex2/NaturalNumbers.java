@@ -1,6 +1,6 @@
 package Ex2;
 
-public class EvenNumbers {
+public class NaturalNumbers {
     //1
     public int findMaximum(int[] numbers){
         int max=numbers[0];
