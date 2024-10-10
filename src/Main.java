@@ -52,5 +52,8 @@ public class Main {
         //3
         int[] bigNumber5 = {2, 3, 6, 0, 0, 0, 0, 0, 0};
         System.out.println("3. Multiplikation: " + Arrays.toString(bigNumber.mul(bigNumber5, 2)));
+        //4
+        int[] bigNumber6 = {2, 3, 6, 0, 0, 0, 0, 0, 0};
+        System.out.println("4. Division: " + Arrays.toString(bigNumber.div(bigNumber6, 2)));
     }
 }

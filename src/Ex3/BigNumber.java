@@ -51,4 +51,17 @@ public class BigNumber {
         }
         return result;
     }
+
+    public int[] div(int[] number1, int number2) {
+        int[] result = new int[number1.length];
+        int rest = 0;
+
+        for (int i = 0; i < number1.length; i++) {
+            int current = rest * 10 + number1[i];
+            result[i] = current / number2;
+            rest = current % number2;
+        }
+
+        return result;
+    }
 }
