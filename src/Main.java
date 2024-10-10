@@ -2,7 +2,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 import Ex1.UniversityGrades;
-import Ex2.EvenNumbers;
+import Ex2.NaturalNumbers;
+import Ex3.BigNumber;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,13 +30,27 @@ public class Main {
         //1.4
         int maxRoundedGrade = grades.getMaxRoundedGrade(gradesArray);
         System.out.println("\n4. Die maximale abgerundete Note: " + maxRoundedGrade);
-        //2.1
-        EvenNumbers number= new EvenNumbers();
+        //2
+        NaturalNumbers number = new NaturalNumbers();
         System.out.println("\nAufgabe 2");
-        int[] numbersArray={4, 8, 3, 10, 17};
+        int[] numbersArray = {4, 8, 3, 10, 17};
         System.out.println("1. Maximale Zahl: " + number.findMaximum(numbersArray));
         System.out.println("2. Minimale Zahl: " + number.findMinimum(numbersArray));
         System.out.println("3. Maximale Summe von n-1 Zahlen: " + number.findMaxSum(numbersArray));
         System.out.println("4. Minimale Summe von n-1 Zahlen: " + number.findMinSum(numbersArray));
+        //3
+        BigNumber bigNumber = new BigNumber();
+        System.out.println("\nAufgabe 3");
+        //1
+        int[] bigNumber1 = {1, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] bigNumber2 = {8, 7, 0, 0, 0, 0, 0, 0, 0};
+        System.out.println("1. Summe: " + Arrays.toString(bigNumber.add(bigNumber1, bigNumber2)));
+        //2
+        int[] bigNumber3 = {8, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] bigNumber4 = {5, 4, 0, 0, 0, 0, 0, 0, 0};
+        System.out.println("2. Differenz: " + Arrays.toString(bigNumber.sub(bigNumber3, bigNumber4)));
+        //3
+        int[] bigNumber5 = {2, 3, 6, 0, 0, 0, 0, 0, 0};
+        System.out.println("3. Multiplikation: " + Arrays.toString(bigNumber.mul(bigNumber5, 2)));
     }
 }
