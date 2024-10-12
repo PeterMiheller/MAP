@@ -1,12 +1,12 @@
 package Ex4;
 
 public class USB extends ElectricInstrument{
-    public USB(double price) {
+    public USB(int price) {
         super(price);
     }
 
     @Override
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 }

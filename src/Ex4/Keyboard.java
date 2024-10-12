@@ -1,12 +1,14 @@
 package Ex4;
 
-public class Keyboard extends ElectricInstrument{
-    public Keyboard(double price) {
+public class Keyboard extends ElectricInstrument {
+    public Keyboard(int price) {
         super(price);
     }
 
     @Override
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
+
+
 }

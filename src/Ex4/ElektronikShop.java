@@ -1,13 +1,12 @@
 package Ex4;
 
-import javax.sound.midi.Instrument;
 import java.util.List;
 
 public class ElektronikShop {
     //1
-    public double findCheapestKeyboard(List<Keyboard> keyboards){
+    public int findCheapestKeyboard(List<Keyboard> keyboards){
         Keyboard cheapest = keyboards.getFirst();
-        double minPrice = cheapest.price;
+        int minPrice = cheapest.price;
 
         for (Keyboard keyboard : keyboards) {
             if (keyboard.price < minPrice) {
@@ -19,30 +18,46 @@ public class ElektronikShop {
     }
 
     //2
-    public double findExpensiveInstrument(List<ElectricInstrument> device){
-        ElectricInstrument expensive = device.getFirst();
-        double maxPrice = expensive.price;
-
-        for (ElectricInstrument instrument : device) {
-            if (instrument.price > maxPrice) {
-                expensive = instrument;
-                maxPrice = instrument.price;
+    public int findExpensiveInstrument(List<Keyboard> keyboards, List<USB> usbDevices){
+        int maxPrice = keyboards.getFirst().getPrice();
+        for (Keyboard keyboard : keyboards) {
+            if (keyboard.price > maxPrice) {
+                maxPrice = keyboard.price;
             }
         }
-        return expensive.price;
+
+        for (USB usb : usbDevices) {
+            if (usb.price > maxPrice) {
+                maxPrice = usb.price;
+            }
+        }
+
+        return maxPrice;
     }
 
     //3
-    public double USBMarkusCanBuy(Human Markus,List<USB> usbDevice){
-        ElectricInstrument expensive_USB= new USB(usbDevice.getFirst().price);
+    public int USBMarkusCanBuy(Human Markus,List<USB> usbDevice){
+        int mostExpensiveUSB=-1;
         for(USB device: usbDevice){
-            if(device.price > expensive_USB.price && expensive_USB.price<= Markus.buget){
-                expensive_USB.price=device.price;
+            if(device.price > mostExpensiveUSB && device.price<= Markus.buget){
+                mostExpensiveUSB=device.price;
             }
         }
-        return expensive_USB.price;
+        return mostExpensiveUSB;
     }
 
-
+    //4
+    public int howMuchCanMarkusBuy(Human Markus,List<Keyboard> keyboards, List<USB> usbDrives) {
+        int maxAmount = -1;
+        for (Keyboard keyboard : keyboards) {
+            for (USB usb : usbDrives) {
+                int totalPrice = keyboard.getPrice() + usb.getPrice();
+                if (totalPrice <= Markus.buget) {
+                    maxAmount = Math.max(maxAmount, totalPrice);
+                }
+            }
+        }
+        return maxAmount;
+    }
 
 }

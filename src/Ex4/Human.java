@@ -1,9 +1,9 @@
 package Ex4;
 
 public class Human {
-    double buget;
+    int buget;
 
-    public Human(double buget) {
+    public Human(int buget) {
         this.buget = buget;
     }
 }

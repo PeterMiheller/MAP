@@ -1,11 +1,11 @@
 package Ex4;
 
 public abstract class ElectricInstrument {
-    double price;
+    int price;
 
-    public ElectricInstrument(double price) {
+    public ElectricInstrument(int price) {
         this.price = price;
     }
 
-    public abstract double getPrice();
+    public abstract int getPrice();
 }
