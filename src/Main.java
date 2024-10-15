@@ -60,6 +60,7 @@ public class Main {
         //4
         System.out.println("\nAufgabe 4");
         Human Markus = new Human(50);
+        //List is an interface implemented by ArrayList.
         List<Keyboard> keyboards = Arrays.asList(
                 new Keyboard(15),
                 new Keyboard(20),

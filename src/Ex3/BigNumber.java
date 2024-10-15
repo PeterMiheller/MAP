@@ -61,7 +61,9 @@ public class BigNumber {
             result[i] = current / number2;
             rest = current % number2;
         }
-
+        if (result[0] == 0) {
+            return Arrays.copyOfRange(result, 1, result.length);
+        }
         return result;
     }
 }
